@@ -430,6 +430,7 @@ class MaterialInfo:
     def __init__(self, mat: bpy.types.Material):
         self.ubo = gpu.types.GPUUniformBuf(self._EMPTY_UBO_BYTES)
         self.mat = GLSLMaterial()
+        self.rawMat = mat
         self.update(mat)
 
     def updateAnimation(self, mat: bpy.types.Material, renderer: "MainBRRESRenderer"):
